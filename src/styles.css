@@ -1,0 +1,51 @@
+/*contains styles that are used for created elements*/
+
+/*not sure why I have to do this in angular-cli environment...unnecessary in others...*/
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0
+}
+
+code {
+    background-color: darkgray;
+    color: white;
+    font-weight: bold;
+    padding: 2px 5px 2px 5px;
+}
+
+table:first-child td>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+blockquote{
+    border-left: 3px solid darkgray;
+    padding-left: 5px;
+}
+
+.codecontainer {
+    counter-reset: linecount;
+}
+
+.codeblock {
+    display: block;
+    color: white;
+}
+
+.codeblock:nth-child(even){
+    background-color: black;
+}
+.codeblock:nth-child(odd){
+    background-color: #222;
+}
+
+.codeblock::before {
+    counter-increment: linecount;
+    content: counter(linecount);
+    margin-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}

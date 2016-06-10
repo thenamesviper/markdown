@@ -1,0 +1,94 @@
+#cheatsheet-tab, #footer {
+  width: 100%;
+  height: 5%;
+  clear: both;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 125%; }
+
+#cheatsheet, #about {
+  background-color: #EEE;
+  border: 3px solid black;
+  height: 40%;
+  overflow: auto; }
+
+textarea {
+  float: left;
+  width: 50%;
+  height: 90%;
+  resize: none;
+  font-size: 140%;
+  box-sizing: border-box; }
+
+#output {
+  float: right;
+  font-size: 140%;
+  background-color: #EEE;
+  border-left: 3px solid #000;
+  width: 50%;
+  height: 90%;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
+  overflow: scroll; }
+
+.smaller {
+  height: 50% !important; }
+
+#cheatsheet-tab {
+  color: white;
+  background-color: black;
+  cursor: pointer; }
+
+#cheatsheet table {
+  float: left;
+  width: 50%;
+  text-align: center; }
+  #cheatsheet table caption {
+    font-size: 125%;
+    font-weight: bold; }
+  #cheatsheet table thead {
+    background-color: black;
+    color: white; }
+  #cheatsheet table td {
+    width: 50%; }
+  #cheatsheet table tr:nth-child(even) {
+    background-color: white; }
+
+#cheatsheet table:nth-child(2) {
+  border-left: 1px solid black; }
+  #cheatsheet table:nth-child(2) td {
+    text-align: left;
+    padding-left: 15px; }
+
+#footer {
+  color: black;
+  background-color: #bbbbbb; }
+
+#footer a {
+  display: block;
+  width: 50%; }
+
+#footer a, #about-tab {
+  height: 100%;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer; }
+
+#footer a:hover, #about-tab:hover {
+  background-color: darkgray;
+  color: white; }
+
+#footer a {
+  text-decoration: none;
+  color: black;
+  border-right: 3px solid #000; }
+
+#about {
+  font-size: 150%;
+  padding-left: 15px; }

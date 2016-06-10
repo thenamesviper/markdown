@@ -1,0 +1,70 @@
+<textarea autofocus
+    [(ngModel)]="text"  
+    [class.smaller] = "cheatopen || aboutopen">
+</textarea>
+
+<div id = "output" 
+    [innerHTML] = 'getMarkdown()' 
+    [class.smaller] = "cheatopen || aboutopen">
+</div>
+
+<div id = "cheatsheet-tab" 
+    (click) = "toggleCheat()">
+    <!--name of tab depends on what is open-->
+    <p>{{aboutopen ? "About" : "Cheat Sheet"}}</p> 
+</div>
+<div id = "cheatsheet" *ngIf = "cheatopen">
+    <table>
+        <caption>Single Line</caption>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cheat of singlelineCheats">
+                <td>{{cheat}}</td>
+                <td [innerHTML] = marking(cheat)></td>
+        </tbody>
+    </table>
+    
+    <table>
+        <caption>Multiline</caption>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cheat of multilineCheats">
+                <td [innerHTML] = "cheat.unmarked"></td>
+                <td [innerHTML] = marking(cheat.marked)></td>
+        </tbody>
+    </table>
+   
+</div>
+
+<div id = "about" *ngIf = "aboutopen" (click)=toggleAbout()>
+    <p></p>
+    <ul>
+        <li>Created for <a href = "http://www.freecodecamp.com" target = "_blank">freeCodeCamp</a> using <a href = "https://angular.io/" target="_blank">Angular 2</a> with 
+             <a href = "https://github.com/angular/angular-cli" target = "_blank">Angular-CLI</a>.</li>
+        <li>Most of markdown reference via <a href = "https://en.support.wordpress.com/markdown-quick-reference/" target="_blank">WordPress Support</a>.</li>
+        <li>Basic functionality provided through the JS file marked.js from user <a href = "https://github.com/chjj" target = "_blank">chjj</a>.
+            Pertinent GitHub  <a href = "https://github.com/chjj/marked" target = "_blank">here</a>; file used is lib/marked.js.</li>
+        <li>Codeblocks output different than regular markdown, output here allows for nicer formatting. JS for it created by me.</li>
+        <li>Thumbs up icon from <a href = "https://design.google.com/icons/" target = "_blank">Google Design</a>. Search for "thumb up".</li>
+    </ul>
+    <p>(all links open in new tab)</p>
+</div>
+
+<div id = "footer">
+    <a href = "http://codepen.io/thenamesviper/full/grWNeJ/" target = "_blank">
+    Other Work
+    </a>
+    <div id = "about-tab" (click) = "toggleAbout()">
+        About
+    </div>
+</div>
